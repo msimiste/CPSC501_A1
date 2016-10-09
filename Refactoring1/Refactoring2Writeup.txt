@@ -1,0 +1,21 @@
+1. What needed to be improgved? I.e. What was the "bad code smell"?
+    - The "bad smell" was Comments
+
+2. What refactoring was applied? 
+    - Extract Method
+    - Steps:
+    Step 1: Write Unit Tests to test the code prior to refactoring.
+    Step 2:
+    Step 3:
+    Step 4:
+    Step 5:
+    Step 6:
+    Step 7:
+    Step 8:
+    Step 9:
+    Step 19:
+    
+3. How was the code tested?
+    - Unit tested before and after the refactoring
+    
+4. Does the Result of the refactoring suggest or enable further refactorings
