@@ -41,7 +41,7 @@ public class convertStringToDateTest {
 		
 		IOUtility IO = new IOUtility();
 		
-		convertedDate = IO.convertStringToDate(dateAsString);
+		convertedDate = IO.convertToDate(dateAsString);
 		
 		assertEquals(date,convertedDate);
 		
