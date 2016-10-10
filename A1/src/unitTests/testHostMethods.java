@@ -53,15 +53,21 @@ public class testHostMethods {
 		assertEquals(host.getPath(),"testing/this/path/out");
 	}
 
-	/*
-	public String getFileName() {
-		return fileName;
+	@Test
+	public void testGetFileName() {
+		Host host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+		String fileName = "a1.pdf";
+		assertEquals(host.getFileName(),fileName);
 	}
 
-	public void setFileName(String file) {
-		this.fileName = file;
+	@Test
+	public void testSetFileName() {
+		Host host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+		String fileName = "testingFile.txt";
+		host.setFileName(fileName);
+		assertEquals(host.getFileName(),"testingFile.txt");
 	}
-
+/*
 	public String getConcatPath() {
 		return concatPath;
 	}
