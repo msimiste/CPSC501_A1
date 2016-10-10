@@ -1,0 +1,19 @@
+1. What needed to be improgved? I.e. What was the "bad code smell"?
+    - The "bad smell" was Long Parameter List
+    
+2. What refactoring was applied? 
+    - Introduce Parameter Object
+    - Steps:
+    Step 1: Create a new class to represent the group of parameters you are replacing.
+    Step 2: Compile
+    Step 3: Use Add Parameter for the new data clump.
+    Step 4: For each parameter in the data clump, remove the paramter from the signature.
+    Step 5: Compile and test after removing each parameter
+    Step 6: After removing the parameters, look for behavior that can be moved into the paramter object with Move Method.
+    
+    
+3. How was the code tested?
+    - Unit tested iteratively thoughout the refactoring process
+    
+4. Does the Result of the refactoring suggest or enable further refactorings?
+    - Yes, now that the class "Host" has been extracted from the callUrlCache it is quite obvious that the method beginDownloadStream could reduce the amount of parameters by simply passing a "Host" object. The refactoring method "Introduce Parameter Object" will be applied in Refactoring_4 which will result in 2 parameters vs 5.

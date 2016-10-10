@@ -14,10 +14,10 @@
     Step 7: Review and reduce the interfaces of each class
     Step 8: Decide whether to expose the new class, 
         Step 8a: If yes, decide whether to expose as a reference object or as an immutable value object
-    
+    Step 9:
     
 3. How was the code tested?
-    - Unit tested iteratively throughout the refactoring
+    - Unit tested iteratively thoughout the refactoring process
     
 4. Does the Result of the refactoring suggest or enable further refactorings?
-    - Yes upon completion of "Extract Class" refactoring, it was obvious that method "beginDownloadStream" from the class UrlCache could benefit from some refactoring. In Refactoring_4, the technique "Introduce Parameter Obeject" will be applied thus reducing the parameters required by "beginDownloadStream" from 5 to 2.
+    - Yes, now that the class "Host" has been extracted from the callUrlCache it is quite obvious that the method beginDownloadStream could reduce the amount of parameters by simply passing a "Host" object. The refactoring method "Introduce Parameter Object" will be applied in Refactoring_4 which will result in 2 parameters vs 5.
