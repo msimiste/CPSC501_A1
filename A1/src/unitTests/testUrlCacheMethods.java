@@ -15,6 +15,15 @@ public class testUrlCacheMethods {
 	
 	@Before
 	public void setUp(){
+		 String catalogFilePath = "catalog.txt";
+		File catalogFile = new File(catalogFilePath);
+		
+		if(catalogFile.exists()){
+			catalogFile.delete();
+		}
+		
+
+		
 		try {
 			urlCache = new UrlCache();
 		} catch (UrlCacheException e) {
@@ -60,10 +69,6 @@ public class testUrlCacheMethods {
 		File testFile = new File(testFilePath);
 		assertEquals(true,testFile.exists());
 		
-	}
-	@Test
-	public void testBeginDownloadStream() {
-		String testUrlString = "people.ucalgary.ca:80/~mghaderi/test/a1.pdf";
 	}
 
 }
