@@ -5,7 +5,14 @@
     - Extract Method
     - Steps:
     Step 1: Write Unit Tests to test the code prior to refactoring.
-    Step 2:
+    Step 2: Create a new method, and name it after the intention of the method name
+    Step : Copy the extracted code from the source method into the new target method
+    Step : Scan the extracted code for references to any variables that are local in scope to the source method. These are local variables and parameters to the method.
+    Step : See weather any temporary variables are used only within this extracted code. If so, declare them in the target method as temporary variables.
+    Step : Look to see whether any of these local-scope variables are modified by the extracted code.
+    Step : Pass into the target method as parameters local-scope variables that are read from the extracted code.
+    Step : Compile
+    Step 2
     Step 3:
     Step 4:
     Step 5:

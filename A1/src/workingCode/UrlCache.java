@@ -38,25 +38,7 @@ public class UrlCache {
 	 * @throws UrlCacheException if encounters any errors/exceptions
 	 */
 	public UrlCache() throws UrlCacheException {
-
-		
-		inOut = new IOUtility();
-
-		// Check local cache, load the catalog if it exists
-		if (inOut.checkLocalCache()) {
-			catalog = inOut.readCatalogFromFile();
-		}
-
-		// create catalog file if none exists
-		else {
-
-			try {
-				inOut.createCatalogFile();
-			} catch (Exception e) {
-				//e.printStackTrace();
-				System.out.println(e.getMessage());
-			} 
-		}
+		createCatalogFileIfNoneExists();		
 	}
 
 	/**
@@ -102,6 +84,29 @@ public class UrlCache {
 		 if (temp == null){ throw new UrlCacheException();
 		 }
 		return temp;
+		
+	}
+	
+	/**
+	 * Creates a catalog file called catalog.txt in the local directory
+	 * if there is not already an existing file in the local directory
+	 */
+	private void createCatalogFileIfNoneExists(){
+		
+		inOut = new IOUtility();
+		
+		if (inOut.checkLocalCache()) {
+			catalog = inOut.readCatalogFromFile();
+		}
+
+		else {
+
+			try {
+				inOut.createCatalogFile();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			} 
+		}
 		
 	}
 	
