@@ -1,0 +1,23 @@
+1. What needed to be improgved? I.e. What was the "bad code smell"?
+    - The "bad smell" was Comments
+
+2. What refactoring was applied? 
+    - Extract Method
+    - Steps:
+    Step 1: Write Unit Tests to test the code prior to refactoring.
+    Step 2: Create a new method, and name it after the intention of the method name
+    Step 3: Copy the extracted code from the source method into the new target method
+    Step 4: Scan the extracted code for references to any variables that are local in scope to the source method. These are local variables and parameters to the method.
+    Step 5: See weather any temporary variables are used only within this extracted code. If so, declare them in the target method as temporary variables.
+    Step 6: Look to see whether any of these local-scope variables are modified by the extracted code.
+    Step 7: Pass into the target method as parameters local-scope variables that are read from the extracted code.
+    Step 8: Compile 
+    Step 9: Replace the extrated code in the sourece method with a call to the target method.
+    Step 10: Compile and test
+    
+3. How was the code tested?
+    - Unit tested before and after the refactoring
+    
+4. Does the Result of the refactoring suggest or enable further refactorings?
+    - Could possibly extract method on the code within the newly created method "createCatalogFileIfNoneExists" 
+    - Could possible then follow up with method rename.
