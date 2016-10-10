@@ -8,16 +8,24 @@ import workingCode.Host;
 
 public class testHostMethods {
 	
+	Host host;
+	
+	@Before
+	public void setUP()
+	{
+		 host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+	}
+	
 	@Test
 	public void testGetHostName() {
-		Host host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+		
 		String testHostname = "people.ucalgary.ca";
-		assertEquals(host.getHostName(),testHostname);
+		assertEquals(testHostname,host.getHostName());
 	}
 	
 	@Test
 	public void testSetHostName(){
-		Host host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+		
 		String testHostname = "testing";
 		host.setHostName(testHostname);
 		assertEquals(testHostname,host.getHostName());
@@ -25,64 +33,78 @@ public class testHostMethods {
 	
 	@Test
 	public void testGetPort() {
-		Host host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+		
 		int testPort = 80;
 		assertEquals(testPort,host.getPort());
 	}
 
 	@Test
 	public void testSetPort() {
-		Host host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+		
 		int testPort = 9001;
 		host.setPort(testPort);
-		assertEquals(host.getPort(),testPort);		
+		assertEquals(testPort,host.getPort());		
 	}
 
 	@Test
 	public void testGetPath() {
-		Host host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+		
 		String testPath = "/~mghaderi/test"; 
 		assertEquals(testPath,host.getPath());
 	}
 
 	@Test
 	public void testSetPath() {
-		Host host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+		
 		String testPath = "testing/this/path/out";
 		host.setPath(testPath);
-		assertEquals(host.getPath(),"testing/this/path/out");
+		assertEquals("testing/this/path/out", host.getPath());
 	}
 
 	@Test
 	public void testGetFileName() {
-		Host host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+		
 		String fileName = "a1.pdf";
-		assertEquals(host.getFileName(),fileName);
+		assertEquals(fileName, host.getFileName());
 	}
 
 	@Test
 	public void testSetFileName() {
-		Host host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+		
 		String fileName = "testingFile.txt";
 		host.setFileName(fileName);
-		assertEquals(host.getFileName(),"testingFile.txt");
-	}
-/*
-	public String getConcatPath() {
-		return concatPath;
+		assertEquals("testingFile.txt", host.getFileName());
 	}
 
-	public void setConcatPath(String cPath) {
-		this.concatPath = cPath;
+	@Test
+	public void getConcatPath() {
+		
+		String concatPath = "/~mghaderi/test/a1.pdf";
+		assertEquals(concatPath,host.getConcatPath());		
 	}
 
-	public String getUrl() {
-		return url;
+	@Test
+	public void setConcatPath() {
+		
+		String concatPath = "this/is/a/test/path";
+		host.setConcatPath(concatPath);
+		assertEquals("this/is/a/test/path",host.getConcatPath());
 	}
 
-	public void setUrl(String urlToSet) {
-		this.url = urlToSet;
+	@Test
+	public void getUrl() {
+		
+		String testUrl = "people.ucalgary.ca/~mghaderi/test/a1.pdf";
+		assertEquals(testUrl,host.getUrl());		
 	}
 
-*/
+	@Test
+	public void setUrl() {
+		
+		String url = "/ThisIsA/Test/Url";
+		host.setUrl(url);
+		assertEquals(url, host.getUrl());
+	}
+
+
 }
