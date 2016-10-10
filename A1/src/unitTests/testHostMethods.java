@@ -38,14 +38,22 @@ public class testHostMethods {
 		assertEquals(host.getPort(),testPort);		
 	}
 
-	/*public String getPath() {
-		return path;
+	@Test
+	public void testGetPath() {
+		Host host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+		String testPath = "/~mghaderi/test"; 
+		assertEquals(testPath,host.getPath());
 	}
 
-	public void setPath(String pth) {
-		this.path = pth;
+	@Test
+	public void testSetPath() {
+		Host host = new Host("people.ucalgary.ca:80/~mghaderi/test/a1.pdf");
+		String testPath = "testing/this/path/out";
+		host.setPath(testPath);
+		assertEquals(host.getPath(),"testing/this/path/out");
 	}
 
+	/*
 	public String getFileName() {
 		return fileName;
 	}
