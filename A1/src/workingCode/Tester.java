@@ -13,10 +13,10 @@ public class Tester {
 		// include whatever URL you like
 		// these are just some samples
 		String[] url = {//"people.ucalgary.ca/~mghaderi/test/test.html",
-						//"people.ucalgary.ca/~mghaderi/test/uc.gif",
+						"people.ucalgary.ca/~mghaderi/test/uc.gif"//,
 						//"people.ucalgary.ca:80/~mghaderi/test/a1.pdf", 
 						//"www.iconfinder.com/404notfound"*/ /*test for cache exception*/};
-						"users.eastlink.ca/~shimmyy/dowdypage/images/deck3.jpg"};
+						/*"users.eastlink.ca/~shimmyy/dowdypage/images/deck3.jpg"}*/};
 		
 		// this is a very basic tester
 		// the TAs will use more a comprehensive set of tests
