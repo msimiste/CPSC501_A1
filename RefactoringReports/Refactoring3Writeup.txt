@@ -4,22 +4,20 @@
 2. What refactoring was applied? 
     - Extract Class
     - Steps:
-    Step 1: Write Unit Tests to test the code prior to refactoring.
-    Step 2: Decide how to split the responsibilities of the class. 
-    Step 3: Create a new class to express the split-off responsibilities.
-        Step 3a: If the responsibilities of the old class no longer match it's name, rename the old class.
-    Step 4: Make a link from the old class to the new class
-    Step 5: Use move field on each field that must be moved
-    Step 6: Use move method on each method that must be must be moved
-    Step 7: Compile and test after each move
-    Step 8: Review and reduce the interfaces of each class
-    Step 9: Decide whether to expose the new class, 
-        Step 9a: If yes, decide whether to expose as a reference object or as an immutable value object
-    Step 10:
+    Step 1: Decide how to split the responsibilities of the class. 
+    Step 2: Create a new class to express the split-off responsibilities.
+        Step 2a: If the responsibilities of the old class no longer match it's name, rename the old class.
+    Step 3: Make a link from the old class to the new class
+    Step 4: Use move field on each field that must be moved
+    Step 5: Use move method on each method that must be must be moved
+    Step 6: Compile and test after each move
+    Step 7: Review and reduce the interfaces of each class
+    Step 8: Decide whether to expose the new class, 
+        Step 8a: If yes, decide whether to expose as a reference object or as an immutable value object
+    
     
 3. How was the code tested?
-    - Unit tested before and after the refactoring
+    - Unit tested iteratively throughout the refactoring
     
 4. Does the Result of the refactoring suggest or enable further refactorings?
-    - Could possibly extract method on the code within the newly created method "createCatalogFileIfNoneExists" 
-    - Could possible then follow up with method rename.
+    - Yes upon completion of "Extract Class" refactoring, it was obvious that method "beginDownloadStream" from the class UrlCache could benefit from some refactoring. In Refactoring_4, the technique "Introduce Parameter Obeject" will be applied thus reducing the parameters required by "beginDownloadStream" from 5 to 2.

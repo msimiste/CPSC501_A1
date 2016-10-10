@@ -1,15 +1,13 @@
 package workingCode;
 
 public class Host {
-
-	// split the url into usable pieces
-	private String hostName; // = parseUrl(url);
-	private int port; // = initializePort(hostName);
-	// private hostName; // = removePortFromHostname(hostName);
-	private String path; // = parsePath(url);
-	private String fileName; // = parseTail(url);
-	private String concatPath; // = path + "/" + fileName;
-	String url; // = hostName + concatPath;
+	
+	private String hostName;
+	private int port;
+	private String path;
+	private String fileName;
+	private String concatPath;
+	String url; 
 
 	public Host(String url) {
 		initializeLocals(url);
@@ -22,7 +20,7 @@ public class Host {
 	public void setHostName(String name) {
 		this.hostName = name;
 	}
-
+	
 	public int getPort() {
 		return port;
 	}
@@ -64,7 +62,6 @@ public class Host {
 	}
 
 	private void initializeLocals(String url) {
-
 		this.setHostName(parseUrl(url));
 		this.setPort(this.initializePort(hostName));
 		this.setHostName(removePortFromHostName(hostName));
@@ -72,7 +69,6 @@ public class Host {
 		this.setFileName(parseTail(url));
 		this.setConcatPath(initializeConcatenatedPath());
 		this.setUrl(initializeUrl());
-
 	}
 
 	private String initializeConcatenatedPath() {
@@ -84,9 +80,7 @@ public class Host {
 	}
 
 	/**
-	 * 
-	 * @param in
-	 *            - URL to be parsed
+	 * @param in - URL to be parsed
 	 * @return parsed URL which is a string
 	 */
 	private String parseUrl(String in) {
@@ -119,8 +113,7 @@ public class Host {
 
 	/**
 	 * 
-	 * @param in
-	 *            URL which contains a filepath
+	 * @param in: URL which contains a filepath
 	 * @return a filepath string
 	 */
 	private String parsePath(String in) {
@@ -131,14 +124,11 @@ public class Host {
 		for (int i = 1; i < arr.length - 1; i++) {
 			path = path + "/" + arr[i];
 		}
-
 		return path;
 	}
 
 	/**
-	 * 
-	 * @param in
-	 *            URL to be parsed
+	 * @param in: URL to be parsed
 	 * @return returns the last component of a URL the file name including
 	 *         extension
 	 */
@@ -152,8 +142,7 @@ public class Host {
 
 	/**
 	 * 
-	 * @param hostName
-	 *            string hostname which may or may not contain a port
+	 * @param hostName : string hostname which may or may not contain a port
 	 * @return hostname with the port removed if it exists
 	 * 
 	 */
